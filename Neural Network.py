@@ -1,3 +1,4 @@
+"""This is the snippet of code of neural network without using sklearn library by Phan Tien Dung, University of Tuebingen"""
 import numpy as np
 import struct
 
@@ -125,7 +126,6 @@ class neuralnetwork:
 
         return self
 
-
 def load_data(name):
 
     """loading train and test data"""
@@ -141,8 +141,6 @@ def load_data(name):
         image = ((image/255) - 0.5) * 2
 
     return image, label
-
-
 
 if __name__ == '__main__':
 
