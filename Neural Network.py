@@ -1,4 +1,5 @@
-"""This is the snippet of code of neural network without using sklearn library by Phan Tien Dung, University of Tuebingen"""
+"""This is the snippet of code of neural network without using sklearn library, wirtten by Phan Tien Dung the University of Tuebingen"""
+
 import numpy as np
 import struct
 
