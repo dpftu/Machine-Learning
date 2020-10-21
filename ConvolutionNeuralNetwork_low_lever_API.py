@@ -1,4 +1,4 @@
-
+"""Convolution Neural Network"""
 
 import struct
 import numpy as np
