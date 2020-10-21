@@ -5,8 +5,6 @@ import numpy as np
 import tensorflow as tf
 import os
 
-
-
 def load_data(name):
 
     """loading train and test data"""
