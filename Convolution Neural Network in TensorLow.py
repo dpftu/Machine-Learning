@@ -1,5 +1,4 @@
 
-
 import struct
 import numpy as np
 import tensorflow as tf
@@ -307,8 +306,6 @@ if __name__ == '__main__':
         validation_set = (X_valid_center, y_valid),
         initialize = True
     )
-
-
 
 
 
