@@ -1,11 +1,8 @@
 
-
 import numpy as np
 import pandas as pd
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
-
-
 
 class perceptron:
 
