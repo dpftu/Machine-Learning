@@ -4,7 +4,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 
-
 class perceptron:
 
     """perceptron algorithm in python"""
@@ -92,32 +91,3 @@ if __name__ == '__main__':
     plt.ylabel('Petal Length')
     plt.legend(loc='upper right')
     plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
