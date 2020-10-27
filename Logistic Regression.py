@@ -1,10 +1,10 @@
+"""Logistic Regression implemented manually"""
 
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
 
-
-class logistic:
+class logisticregression:
 
     def __init__(self, lr = 0.01, epoch = 10, random_state = 5, method = 'sgd'):
 
@@ -77,11 +77,7 @@ class logistic:
 
         return np.where(self.activation(self.netinput(X)) >= 1/2, 1, 0)
 
-
-
-
 if __name__ == '__main__':
-
 
     """machine learning in python"""
 
@@ -103,23 +99,8 @@ if __name__ == '__main__':
     y_train_subset = y_train[(y_train == 0) | (y_train == 1)]
     X_test_subset = X_test[(y_test == 0) | (y_test == 1)]
     y_test_subset = y_test[(y_test == 0) | (y_test == 1)]
-    logistic = logistic(lr = 0.01, epoch = 100, random_state = 5, method = 'gd')
+    logistic = logisticregression(lr = 0.01, epoch = 100, random_state = 5, method = 'gd')
     logistic.fit(X_train_subset, y_train_subset)
     print(f'test acc: {(logistic.prediction(X_test_subset) == y_test_subset).sum()/len(y_test_subset)}')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
