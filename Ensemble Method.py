@@ -10,7 +10,6 @@ df = pd.read_csv('wine.csv', header = None)
 X = df.iloc[:, 1:].values
 y = df.iloc[:, 0].values
 le = LabelEncoder()
-le.fit_transform(y)
 y = le.fit_transform(y)
 
 X_train, X_test, y_train, y_test = train_test_split(
