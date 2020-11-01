@@ -1,5 +1,3 @@
-
-
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
@@ -65,39 +63,6 @@ print(f'bagging train: {bag.score(X_train, y_train):.{4}}')
 print(f'bagging train: {bag.score(X_test, y_test):.{4}}')
 print(f'unpruned tree train: {tree.score(X_train, y_train):.{3}}')
 print(f'unpruned tree test: {tree.score(X_test, y_test):.{3}}')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
