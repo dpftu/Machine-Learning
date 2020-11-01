@@ -57,18 +57,11 @@ ada = AdaBoostClassifier(
 ada.fit(X_train, y_train)
 ada.score(X_train, y_train)
 
+if __name__ == '__main__':
 
-print(f'adaptive boosting: {ada.score(X_train, y_train):.{4}}')
-print(f'adaptive boosting: {ada.score(X_test, y_test):.{4}}')
-print(f'bagging train: {bag.score(X_train, y_train):.{4}}')
-print(f'bagging train: {bag.score(X_test, y_test):.{4}}')
-print(f'unpruned tree train: {tree.score(X_train, y_train):.{3}}')
-print(f'unpruned tree test: {tree.score(X_test, y_test):.{3}}')
-
-
-
-
-
-
-
-
+    print(f'unpruned tree train: {tree.score(X_train, y_train):.{3}}')
+    print(f'unpruned tree test: {tree.score(X_test, y_test):.{3}}')
+    print(f'bagging train: {bag.score(X_train, y_train):.{4}}')
+    print(f'bagging train: {bag.score(X_test, y_test):.{4}}')
+    print(f'adaptive boosting train: {ada.score(X_train, y_train):.{4}}')
+    print(f'adaptive boosting test: {ada.score(X_test, y_test):.{4}}')
