@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -76,8 +75,7 @@ def plot_decision_region(X, y, classifier, resolution = 0.02):
         )
 
 if __name__ == '__main__':
-
-
+    
     """python programming"""
 
     df = pd.read_csv('iris.csv', header=None)
