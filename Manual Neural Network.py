@@ -1,18 +1,10 @@
-
 import numpy as np
 import struct
 
 class neuralnetwork:
 
     """neural network in machine learning"""
-    def __init__(self,
-                 n_hidden = 30,
-                 l2 = 0,
-                 epochs = 100,
-                 eta = 0.001,
-                 shuffle = True,
-                 minibatch = 100,
-                 seed = None):
+    def __init__(self, n_hidden = 30, l2 = 0, epochs = 100, eta = 0.001, shuffle = True, minibatch = 100, seed = None):
 
         self.random = np.random.RandomState(seed)
         self.n_hidden = n_hidden
@@ -157,5 +149,3 @@ if __name__ == '__main__':
 
     nn.fit(X_train, y_train, X_test, y_test)
     print(nn.eval_)
-
-
