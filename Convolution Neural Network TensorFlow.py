@@ -24,19 +24,11 @@ X_train, y_train = X[:50000, :], y[:50000]
 X_valid, y_valid = X[50000: ,:], y[50000:]
 X_test, y_test = load_data('t10k')
 
-def batch_generator(
-
-        X,
-        y,
-        batch_size = 64,
-        shuffle = False,
-        random_seed = None
-
-):
+def batch_generator( X, y, batch_size = 64, shuffle = False, random_seed = None):
 
     idx = np.arange(y.shape[0])
     if shuffle:
-
+        
         rng = np.random.RandomState(random_seed)
         rng.shuffle(idx)
         X = X[idx]
