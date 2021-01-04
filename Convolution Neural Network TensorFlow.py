@@ -1,10 +1,7 @@
-
 import struct
 import numpy as np
 import tensorflow as tf
 import os
-
-
 
 def load_data(name):
 
@@ -21,7 +18,6 @@ def load_data(name):
         image = ((image/255) - 0.5) * 2
 
     return image, label
-
 
 X, y = load_data('train')
 X_train, y_train = X[:50000, :], y[:50000]
@@ -50,19 +46,15 @@ def batch_generator(
 
         yield (X[i : i + batch_size, :], y[i : i + batch_size])
 
-
-
 mean_val = np.mean(X_train, axis = 0)
 std_val = np.std(X_train)
 X_train_center = (X_train - mean_val)/std_val
 X_valid_center = (X_valid - mean_val)/std_val
 X_test_center = (X_test - mean_val)/std_val
 
-
 class ConvNN():
 
     def __init__(self, batch_size = 64, epochs = 20, learn_rate = 1e-4, dropout_rate = 0.5, shuffle = True, random_seed = None):
-
 
         np.random.seed(random_seed)
         self.batch_size = batch_size
@@ -79,7 +71,7 @@ class ConvNN():
             self.init_op = tf.compat.v1.global_variables_initializer()
             self.saver = tf.compat.v1.train.Saver()
             self.sess = tf.compat.v1.Session(graph = g)
-
+            
     def build(self):
 
         tf_x = tf.compat.v1.placeholder(
@@ -97,7 +89,7 @@ class ConvNN():
 
         )
         is_train = tf.compat.v1.placeholder(
-
+            
             tf.bool,
             shape = (),
             name = 'is_train'
@@ -277,14 +269,13 @@ class ConvNN():
 
                 print()
 
-
     def predict(self, X_test, return_prob = False):
 
         feed = {
 
             'tf_x: 0': X_test,
             'is_train: 0': False
-
+            
         }
         if return_prob:
 
@@ -294,9 +285,7 @@ class ConvNN():
 
             return self.sess.run('labels: 0', feed_dict = feed)
 
-
 if __name__ == '__main__':
-
 
     """testing model"""
     cnn = ConvNN(random_seed = 5)
@@ -306,8 +295,3 @@ if __name__ == '__main__':
         validation_set = (X_valid_center, y_valid),
         initialize = True
     )
-
-
-
-
-
