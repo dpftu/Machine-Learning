@@ -1,4 +1,3 @@
-"""Convolution Neural Network"""
 import struct
 import numpy as np
 import tensorflow as tf
@@ -20,21 +19,12 @@ def load_data(name):
 
     return image, label
 
-
 X, y = load_data('train')
 X_train, y_train = X[:50000, :], y[:50000]
 X_valid, y_valid = X[50000: ,:], y[50000:]
 X_test, y_test = load_data('t10k')
 
-def batch_generator(
-
-        X,
-        y,
-        batch_size = 64,
-        shuffle = False,
-        random_seed = None
-
-):
+def batch_generator(X, y, batch_size = 64, shuffle = False, random_seed = None):
 
     idx = np.arange(y.shape[0])
     if shuffle:
@@ -48,17 +38,13 @@ def batch_generator(
 
         yield (X[i : i + batch_size, :], y[i : i + batch_size])
 
-
-
 mean_val = np.mean(X_train, axis = 0)
 std_val = np.std(X_train)
 X_train_center = (X_train - mean_val)/std_val
 X_valid_center = (X_valid - mean_val)/std_val
 X_test_center = (X_test - mean_val)/std_val
 
-
 def conv_layer(input_tensor, name, kerner_size, n_output_channels, padding_mode = 'SAME', strides = (1, 1, 1, 1)):
-
 
     with tf.compat.v1.variable_scope(name):
 
@@ -105,8 +91,7 @@ def conv_layer(input_tensor, name, kerner_size, n_output_channels, padding_mode 
 
         )
         print(conv)
-
-
+        
     return conv
 
 g = tf.Graph()
@@ -144,7 +129,7 @@ def fc_layer(input_tensor, name, n_output_units, activation_fn = None):
             shape = weights_shape
 
         )
-
+        
         print(weights)
         biases = tf.compat.v1.get_variable(
 
@@ -413,8 +398,6 @@ def predict(sess, X_test, return_prob = False):
 
         return sess.run('labels: 0', feed_dict = feed)
 
-
-
 learn_rate = 1e-4
 random_seed = 5
 g = tf.Graph()
@@ -451,62 +434,4 @@ with tf.compat.v1.Session(graph = g2) as sess:
     load(saver, sess, epoch = 20, path = './model/')
     preds = predict(sess, X_test_center, return_prob = False)
     print(f'test accuracy is {np.sum(preds == y_test)/len(y_test)}')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
