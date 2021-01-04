@@ -30,8 +30,7 @@ class perceptron:
                 error += int(update != 0)
 
             self.error_.append(error)
-
-
+            
         return self
 
     def netinput(self, X):
